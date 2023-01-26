@@ -1,17 +1,10 @@
 import React, { useState } from 'react'
-// import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NewspaperIcon from '@mui/icons-material/Newspaper';
 import Button from '@mui/material/Button';
 import CachedIcon from '@mui/icons-material/Cached';
 import axios from 'axios';
-import DisplayCard from './DisplayCard';
-// import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
 import { Table } from 'react-bootstrap';
+import HomePage from './HomePage';
 
 const Dashboard = () => {
 
@@ -51,8 +44,9 @@ const Dashboard = () => {
     // console.log(news[0].source.name);
 
     return (
-        <Container fluid >
 
+        <Container fluid >
+            <HomePage />
             <Button variant="outlined" startIcon={<CachedIcon />} onClick={LoadNews} >
                 Load
             </Button>
@@ -86,7 +80,7 @@ const Dashboard = () => {
                             width="30"
                             height="30"
                             className="d-inline-block align-top"
-              
+                            alt={data.name}
                             />
                             
                             

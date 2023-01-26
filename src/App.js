@@ -1,15 +1,22 @@
-import ApiTest from "./components/ApiTest";
+import { Route, Routes } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
+import DataTableRender from "./components/DataTableRender";
+import DisplayCard from "./components/DisplayCard";
+import HomePage from "./components/HomePage";
 // import DisplayCard from "./components/DisplayCard";
 
 function App() {
   return (
     <div>
-      {/* <DisplayCard /> */}
 
-      <Dashboard />
 
-      
+      <Routes>
+
+        <Route path='/' element={<HomePage />} />
+        <Route path='/react-data-tables' element={<DataTableRender />} />
+        <Route path='/simple-table' element={<Dashboard />} />
+        <Route path='/card-view' element={<DisplayCard />} />
+      </Routes>
 
 
     </div>
