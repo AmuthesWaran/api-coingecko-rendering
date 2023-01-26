@@ -2,8 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import DataTableRender from "./components/DataTableRender";
 import DisplayCard from "./components/DisplayCard";
-import HomePage from "./components/HomePage";
-// import DisplayCard from "./components/DisplayCard";
 
 function App() {
   return (
@@ -12,10 +10,11 @@ function App() {
 
       <Routes>
 
-        <Route path='/' element={<HomePage />} />
+        <Route path='/' element={<Dashboard />} />
         <Route path='/react-data-tables' element={<DataTableRender />} />
         <Route path='/simple-table' element={<Dashboard />} />
         <Route path='/card-view' element={<DisplayCard />} />
+        
       </Routes>
 
 

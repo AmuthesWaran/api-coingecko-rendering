@@ -68,29 +68,29 @@ const Dashboard = () => {
                 <tbody>
 
                     {
-                    
-                    data.map(data => (
-                    <tr key={data.id} >
-                        <td>{data.id}</td>
-                        <td>{data.symbol}</td>
-                        <td>{data.name}</td>
-                        <td>
 
-                            <img src={data.image} 
-                            width="30"
-                            height="30"
-                            className="d-inline-block align-top"
-                            alt={data.name}
-                            />
-                            
-                            
-                            </td>
-                        <td>{data.current_price}</td>
-                        <td>{data.market_cap}</td>
-                        <td>{data.market_cap_rank}</td>
-                        <td>{data.last_updated}</td>
-                    </tr>
-))}
+                        data.map(data => (
+                            <tr key={data.id} >
+                                <td>{data.id}</td>
+                                <td>{data.symbol}</td>
+                                <td>{data.name}</td>
+                                <td>
+
+                                    <img src={data.image}
+                                        width="30"
+                                        height="30"
+                                        className="d-inline-block align-top"
+                                        alt={data.name}
+                                    />
+
+
+                                </td>
+                                <td>{data.current_price}</td>
+                                <td>{data.market_cap}</td>
+                                <td>{data.market_cap_rank}</td>
+                                <td>{data.last_updated}</td>
+                            </tr>
+                        ))}
                 </tbody>
             </Table>
 

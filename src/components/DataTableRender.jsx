@@ -63,6 +63,7 @@ const DataTableRender = () => {
   return (
     <div>
       <HomePage />
+      
       <Button onClick={LoadFromApi} >Load</Button>
       <DataTable
         columns={columns}

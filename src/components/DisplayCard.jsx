@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import HomePage from './HomePage';
 import axios from 'axios';
-import { Container, ListGroup } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 const DisplayCard = () => {
 
     const [data, setData] = useState([])
@@ -31,82 +31,82 @@ const DisplayCard = () => {
         <div>
             <HomePage />
             <Container fluid>
-            <Button onClick={LoadFromApi} >Load</Button>
-            <div className="row">
-            {
+                <Button onClick={LoadFromApi} >Load</Button>
+                <div className="row">
+                    {
 
-                data.map(data => (
+                        data.map(data => (
 
-                    <Card sx={{ maxWidth: 345 }}>
-                        <CardHeader
+                            <Card sx={{ maxWidth: 345 }}>
+                                <CardHeader
 
 
-                            title={data.name}
-                            subheader={data.symbol}
-                        />
-                        <CardMedia
-                            component="img"
-                            height="200"
-                            image={data.image}
-                            alt={data.name}
-                        />
-                        <CardContent>
-                            <Typography variant="body2" color="text.secondary">
-                                
-                                    <table>
-                                        <tr>
-                                            <td>
-                                            Market Price Rank
-                                            </td>
-                                            <td>
-                                            {data.market_cap_rank}
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                            Current Price
-                                            </td>
-                                            <td>
-                                            {data.current_price}
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                            Market Price
-                                            </td>
-                                            <td>
-                                            {data.market_cap}
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                            Last Updated
-                                            </td>
-                                            <td>
-                                            {data.last_updated}
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    {/* <ListGroup variant="flush">
+                                    title={data.name}
+                                    subheader={data.symbol}
+                                />
+                                <CardMedia
+                                    component="img"
+                                    height="200"
+                                    image={data.image}
+                                    alt={data.name}
+                                />
+                                <CardContent>
+                                    <Typography variant="body2" color="text.secondary">
+
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    Market Price Rank
+                                                </td>
+                                                <td>
+                                                    {data.market_cap_rank}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Current Price
+                                                </td>
+                                                <td>
+                                                    {data.current_price}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Market Price
+                                                </td>
+                                                <td>
+                                                    {data.market_cap}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Last Updated
+                                                </td>
+                                                <td>
+                                                    {data.last_updated}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        {/* <ListGroup variant="flush">
                                     <ListGroup.Item>Market Price Rank: {data.market_cap_rank}</ListGroup.Item>
                                     <ListGroup.Item>Current Price: {data.current_price}</ListGroup.Item>
                                     <ListGroup.Item>Market Price: {data.market_cap}</ListGroup.Item>
                                     <ListGroup.Item>Last Updated: {data.last_updated}</ListGroup.Item>
                                 </ListGroup> */}
-                            </Typography>
-                        </CardContent>
-                        <CardActions disableSpacing>
-                            <IconButton aria-label="add to favorites">
-                                <FavoriteIcon />
-                            </IconButton>
+                                    </Typography>
+                                </CardContent>
+                                <CardActions disableSpacing>
+                                    <IconButton aria-label="add to favorites">
+                                        <FavoriteIcon />
+                                    </IconButton>
 
-                        </CardActions>
-                    </Card>
-                    
+                                </CardActions>
+                            </Card>
 
-                ))
-            }
-            </div>
+
+                        ))
+                    }
+                </div>
             </Container>
         </div>
     )
