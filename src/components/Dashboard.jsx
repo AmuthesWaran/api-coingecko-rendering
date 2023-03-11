@@ -5,6 +5,7 @@ import CachedIcon from '@mui/icons-material/Cached';
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
 import HomePage from './HomePage';
+import { FormControlLabel, Switch } from '@mui/material';
 
 const Dashboard = () => {
 
@@ -19,6 +20,7 @@ const Dashboard = () => {
 
     // https://newsapi.org/v2/top-headlines?${country}${category}apiKey=dbaefe94344341b6b68c526c4070fe6f
     const [data, setData] = useState([])
+    const [mode, setMode] = useState('dark')
 
     // var date = "2022-09-30T11:49:49Z"
     // date.search("T")
@@ -43,16 +45,40 @@ const Dashboard = () => {
     }
     // console.log(news[0].source.name);
 
+    function switchMode(e) {
+        // console.log(e.target.checked)
+        if (!e.target.checked) {
+            setMode('light')
+        }
+        else {
+            setMode('dark')
+        }
+    }
+
     return (
 
         <Container fluid >
             <HomePage />
-            <Button variant="outlined" startIcon={<CachedIcon />} onClick={LoadNews} >
+            <FormControlLabel
+                value="start"
+                control={
+                    <Switch
+
+                        defaultChecked
+                        onChange={switchMode}
+                        inputProps={{ 'aria-label': 'controlled' }}
+                    />
+                }
+                label="Dark Mode"
+                labelPlacement="start"
+            />
+            <br />
+            <Button className='m-4' variant="outlined" startIcon={<CachedIcon />} onClick={LoadNews} >
                 Load
             </Button>
 
 
-            <Table striped bordered hover variant="dark" >
+            <Table striped bordered hover variant={mode} >
                 <thead>
                     <tr>
                         <th>ID</th>
