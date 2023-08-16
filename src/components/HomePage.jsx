@@ -19,7 +19,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <Navbar bg="light" expand="lg">
+      <Navbar expand="lg">
         <Container>
           <Navbar.Brand onClick={simpleTable} >Coingecko Api Rendering</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

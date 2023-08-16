@@ -35,10 +35,14 @@ const Dashboard = () => {
 
     const LoadNews = () => {
 
-        var url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc&per_page=25&page=1&sparkline=false`
-        console.log(url);
+        var url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc`
+        // console.log(url);
         axios.get(url)
-            .then(response => setData(response.data))
+            .then(response => {
+                //Top 100 response
+                console.log(response);
+                setData(response.data)
+            })
             .catch(error => console.log(error))
 
 
@@ -84,11 +88,11 @@ const Dashboard = () => {
                         <th>ID</th>
                         <th>Symbol</th>
                         <th>Name</th>
-                        <th>image</th>
-                        <th>current_price</th>
-                        <th>market_cap</th>
-                        <th>market_cap_rank</th>
-                        <th>last_updated</th>
+                        <th>Logo</th>
+                        <th>Current Price</th>
+                        <th>Market Capital</th>
+                        <th>Market Capital Rank</th>
+                        <th>Last Updated</th>
                     </tr>
                 </thead>
                 <tbody>

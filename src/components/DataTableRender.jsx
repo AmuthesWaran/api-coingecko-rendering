@@ -10,7 +10,7 @@ const DataTableRender = () => {
   const [data, setData] = useState([])
   const LoadFromApi = () => {
 
-    var url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc&per_page=25&page=1&sparkline=false`
+    var url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc`
     console.log(url);
     axios.get(url)
       .then(response => setData(response.data))
@@ -63,7 +63,7 @@ const DataTableRender = () => {
   return (
     <div>
       <HomePage />
-      
+
       <Button onClick={LoadFromApi} >Load</Button>
       <DataTable
         columns={columns}
